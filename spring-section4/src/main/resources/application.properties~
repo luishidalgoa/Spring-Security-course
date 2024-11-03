@@ -12,6 +12,6 @@ spring.datasource.url=jdbc:mysql://${DATABASE_HOST:localhost}:${DATABASE_PORT:33
 spring.datasource.username=${DATABASE_USER:root}
 spring.datasource.password=${DATABASE_PASSWORD:1234}
 spring.datasource.driver-class-name=${DATABASE_DRIVER:com.mysql.cj.jdbc.Driver}
-spring.jpa.hibernate.ddl-auto=${HIBERNATE_DDL_AUTO:validate}
+spring.jpa.hibernate.ddl-auto=${HIBERNATE_DDL_AUTO:create}
 spring.jpa.show-sql=${JPA_SHOW_SQL:true}
 spring.jpa.properties.hibernate.format_sql=${HIBERNATE_FORMAT_SQL:true}
