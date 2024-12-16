@@ -1,0 +1,26 @@
+services:
+  keycloak:
+    image: quay.io/keycloak/keycloak:latest
+    ports:
+      - "8180:8080"
+    environment:
+      KEYCLOAK_USER: admin
+      KEYCLOAK_PASSWORD: admin
+    networks:
+      - eazybank
+
+  mysql:
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: eazybank
+      MYSQL_ROOT_PASSWORD: aaaa
+    volumes:
+      - ./src/main/resources/sql:/docker-entrypoint-initdb.d
+    networks:
+      - eazybank
+
+networks:
+  eazybank:
+    driver: bridge
